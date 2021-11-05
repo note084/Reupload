@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static "css/cartpage.css" %}"></link>
+<div class="content">
+  <table class="table table-hover table-bordered text-center">
+        <tr class="text-center">
+          <th>Date Ordered</th>
+          <th>Reference Code</th>
+          <th>Item(s)</th>
+          <th>Price(s) </th>
+        </tr>
+        {% for order in my_orders %}
+          <tr>
+            <td>{{ order.date_ordered }}</td>
+            <td>{{ order.ref_code }}</td>
+            <td>
+            {% for item in order.items.all %}
+              {{ item.flights.name }}
+            {% endfor %}
+            </td>
+            <td>${{ order.get_cart_total }}</td>
+
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan= 4>
+              <div class="info">
+                <div class="col-sm-4">
+                  5/4/2020
+                </div>
+                <div class="col-sm-4">
+                  142352
+                </div>
+                <div class="two">
+                  <div class="col-sm-2">
+                    California to Alaska
+                  </div>
+                </div>
+                  <div class="col-sm-2">
+                    $350
+                  </div>
+
+              </div>
+            </td>
+          </tr>
+        {% endfor %}
+
+        <tr>
+          <td colspan=4>
+            <a href="{% url 'flights:bookpage' %}" class="btn btn-warning pull-left">
+              {% if not order %}Find another Flight{% else %}Add Items to Cart {% endif %}
+            </a>
+            <a href="{% url 'checkout'%}" class="btn btn-info pull-right">
+              Checkout
+            </a>
+          </td>
+        </tr>
+      </table>
+</div>
+
+
+{% endblock content %}

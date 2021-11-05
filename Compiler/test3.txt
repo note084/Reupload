@@ -1,0 +1,32 @@
+[* comment testing *]
+
+function goHome(monk int)
+{
+  return 20 * (monk / 50);
+}
+
+%%
+int poo = 10;
+if(poo > 20)
+{
+  return poo;
+}
+fi
+boolean red = true;
+
+if (red == true)
+{
+  return 0;
+}
+otherwise
+{
+  return 1;
+}
+fi
+while(poo < 5)
+{
+poo = poo + 1;
+}
+put(poo);
+real test1, test2, test3;
+%%

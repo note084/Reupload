@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static "css/manager.css" %}"></link>
+{% for flight in flights %}
+          <h2><li>{{ flight}}</li></h2>
+        {% endfor %}
+</body>
+</html>
+{% endblock content %}

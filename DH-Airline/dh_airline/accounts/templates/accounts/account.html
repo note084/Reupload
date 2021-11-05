@@ -1,0 +1,120 @@
+<!-- Gerardo Pena -->
+<!-- kyle Ear -->
+{% extends "base.html"%}
+{% load bootstrap3 %}
+{%load static%}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'accounts/css/account.css'%}">
+<div class="">
+  <div class="everything">
+    <h1>Profile</h1>
+    <form method="POST">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+      {{account_form.non_field_errors}}
+    {% csrf_token %}
+<div class="container">
+    <div class="view-account">
+        <section class="module">
+            <div class="module-inner">
+                </div>
+                <div class="content-panel">
+                    <h2 class="title">Profile</h2>
+
+
+                    <form class="form-horizontal">
+                        <fieldset class="fieldset">
+                            <h3 class="fieldset-title">Personal Info</h3>
+                            <div class="form-group avatar">
+                                <figure class="figure col-md-2 col-sm-3 col-xs-12">
+                                    <img class="img-rounded img-responsive" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                                    <img src="{{request.Account.profile_pic.url}}" alt="">
+                                </figure>
+                                <div class="form-inline col-md-10 col-sm-9 col-xs-12">
+                                    <input type="file" class="file-uploader pull-left">
+                                    <button type="submit" class="btn btn-sm btn-default-alt pull-left">Update Image</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="">
+                                Please fill out all textareas you want to change
+                              </div>
+                              <div class="">
+                                Feel free to add a profile picture!
+                              </div>
+                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">User Name</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    {{ account_form.username.errors }}
+                                    {{account_form.username}}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">First Name</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    {{account_form.first_name}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">Last Name</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    {{account_form.last_name}}
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset class="fieldset">
+                            <h3 class="fieldset-title">Contact Info</h3>
+                            <div class="form-group">
+
+                                <label class="col-md-2  col-sm-3 col-xs-12 control-label">Email</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                  {{ account_form.email.errors }}
+                                    {{account_form.email}}
+                                    <p class="help-block">This is the email </p>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2  col-sm-3 col-xs-12 control-label">Street Address</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    {{account_form.street_address}}
+                                    <p class="help-block">Your Street address</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2  col-sm-3 col-xs-12 control-label">City</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    {{account_form.city_address}}
+                                    <p class="help-block">City</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2  col-sm-3 col-xs-12 control-label">State</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    {{account_form.state_address}}
+                                    <p class="help-block">In 2 characters</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2  col-sm-3 col-xs-12 control-label">zip</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    {{account_form.zip_address}}
+
+                                </div>
+                            </div>
+                        </fieldset>
+                        <hr>
+                        <div class="form-group">
+                            <div class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
+                                <input class="btn btn-primary" type="submit" value="Update Profile">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,80 @@
+<!--Kyle Ear-->
+<!--Jeremy Viray-->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Flight Hub</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+      <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      {% block css_block %}
+
+      {% endblock %}
+        <link rel="stylesheet" href="{% static 'css/base.css'%}">
+  </head>
+  <body>
+      <!-- Navbar -->
+      <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+        <!-- container-fluid to make sure navbar spans entire screen -->
+        <div class="container-fluid">
+          <!-- Brand name and hamburger icon grouped in header -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <!--  Code for the hamburger icon-->
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="{% url 'homepage' %}"><img src="{% static "images/DH_LOGO.png" %}" style="width: 100px; margin-top:15px;"> </a>
+
+           </div> <!-- end header -->
+
+          <!-- Items within hamburger -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <!--Links-->
+            <ul class="nav navbar-nav navbar-right">
+
+              <li><a href="{% url 'flights:bookpage' %}">Book</a> </li>
+              <li><a href="{% url 'mytrips' %}">My Trips</a> </li>
+              <li><a href="{% url 'managerreport' %}">Manager Report</a> </li>
+
+              <li><a href="">Support</a></li>
+
+              <li><a href="{% url 'cart:cartpage' %}">Cart</a></li>
+
+
+              {% if user.is_authenticated %}
+
+              <!-- add in drop down list links for account settings, profile picture, etc-->
+              <li><a href="{% url 'accounts:logout' %}">Log Out</a> </li>
+              <li><a href="{% url 'accounts:account' %}">Edit Account</a> </li>
+
+              {% else %}
+              <li><a href="{% url 'accounts:login' %}">Log In</a> </li>
+              <li><a href="{% url 'accounts:signup' %}">Sign Up</a> </li>
+              {% endif %}
+            </ul> <!--end list-->
+          </div> <!-- end hamburger -->
+        </div> <!-- end container-fluid-->
+
+      </nav>
+
+      {% block content %}
+
+      {% endblock %}
+
+      <script
+      src="http://code.jquery.com/jquery-3.1.1.js"
+      integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+      crossorigin="anonymous"></script>  <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/bookpage.css'%}">
+<div class="container">
+  <form role="search" action='/book/s/'>
+      <div class="form-group" method="post">
+        <label for="to" style="font-size:18px;">To:</label>
+        <input id="bookForm" class="form-control" type="text" name="origin" placeholder="From">
+      </div>
+
+      <div class="form-group">
+        <label for="from" style="font-size:18px;">From:</label>
+        <input id="bookForm" class="form-control" type="text" name="destination" placeholder="To">
+      </div>
+      <input type="submit">
+    </form>
+    <h1>{{ DNE }}</h1>
+</div>
+
+{% endblock %}

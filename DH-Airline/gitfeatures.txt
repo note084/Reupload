@@ -1,0 +1,12 @@
+git branch
+git branch "feature"
+git checkout "feature" 
+git merge "feature"
+git add
+git commit -m "message"
+git commit -am "added anther line"
+
+
+git fetch (downloads latest uploaded commits)
+git merge origin/master (merges with latest commits) 
+git pull (simplified fetch and merge command)

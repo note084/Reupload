@@ -1,0 +1,78 @@
+#bookContainer{
+  margin-top: 100px;
+  margin-left: 0px;
+  width: 100%;
+  background-image: url(https://pics.freeartbackgrounds.com/Sky_with_Clouds_and_Airplane_Background-1482.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-color: white;
+  height: 450px;
+}
+
+#bookJumbo{
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: rgba(112, 123, 128, 0.75);
+  border: 1px solid black;
+  position:relative;
+  left:50px;
+  margin-top: 50px;
+  width: 550px;
+  margin-bottom: 175px;
+  font-size: 40px;
+
+}
+
+#bookHeader{
+  margin-top: -20px;
+  margin-bottom: 30px;
+}
+
+#safety{
+  border-bottom: 4px solid black;
+  margin: 0 auto;
+  width: 310px;
+  padding-bottom: 25px;
+}
+#bookForm{
+   height: 40px;
+}
+.aboutusparagraph{
+  margin: 0 auto;
+  width: 1150px;
+  font-size: 18px;
+}
+.rounded{
+   border-radius:20px;
+}
+.aboutus{
+  margin: 0 auto;
+  border-bottom: 2px solid black;
+  width: 1250px;
+  padding-bottom: 80px;
+}
+.footer{
+  background-color: rgb(45,45,45);
+  height: 250px;
+  padding-top: 30px;
+  margin-top: 55px;
+}
+.footertext{
+  color: white;
+}
+#csufImg{
+  background-image: url(https://news.fullerton.edu/2017wi/_images/Financial-Engineering-Risk-Management.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#reachHigh{
+  width: 555px;
+  height:380px;
+}
+
+#flyWithUs{
+  margin-top: 100px;
+  font-size: 18px;
+}

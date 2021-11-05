@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/myTrips.css'%}">
+<body>
+  <div class="content">
+    <div class="container" id="myTripsContainer">
+
+        <div class="row">
+            <div class="col col-lg-6 col-xs-12">
+                <div class= id="myTripsJumbo">
+                    <h2 id="myTripsHeader"> My Trips </h2>
+                    <form>
+                        <div class="container">
+                            <!-- <div><label><b>Confirmantion Number</b></label> -->
+                            <input type="text" id="confirmantion" placeholder="Confirmantion Number*" name="uname"
+                                required>
+
+                            <div class="">
+                              <button type="Submit"  class="btn btn-info" name="button"><a href="{% url 'mytripsconfirmation' %}"">Search</a></button>
+                            </div>
+                            <!-- <input type="checkbox" checked="checked"> Remember me -->
+                        </div>
+                    </form>
+                </div>
+                <!--end jumbotron-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+
+    </div>
+    <!--end myTripsContainer-->
+  </div>
+
+    <script src="myTrips.js"></script>
+    <script src="http://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+        crossorigin="anonymous"></script> <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
+
+
+</body>
+{% endblock %}

@@ -1,0 +1,59 @@
+<!--kyle ear-->
+<!--brandon le-->
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'flights/flight_list.css'%}">
+<div class="container">
+  <div class="totalresults">
+    <div class="destinationheader">
+      <h1>Departure: {{ orig }} <span class="glyphicon glyphicon-plane"></span>   {{ dest }}</h1>
+    </div>
+    <div class="resultsheader">
+        <h2> Results: </h2>
+    </div>
+    <div class="titles">
+        <div class="col-md-2">
+          Depart
+        </div>
+        <div class="col-md-2">
+          Arrive
+        </div>
+        <div class="col-md-2">
+          Duration
+        </div>
+        <div class="col-md-2">
+          Stops
+        </div>
+    </div>
+    {%for flight in flights %}
+    <div class="results">
+
+            <div class="col-md-2">
+              {{ flight.origin }}
+            </div>
+            <div class="col-md-2">
+              {{ flight.destination }}
+            </div>
+              <div class="col-md-2">
+                {{ flight.duration }} min.
+              </div>
+              <div class="col-md-2">
+                2
+              </div>
+            <div class="col-md-4">
+              <button type="Submit"  class="reservebutton" name="button"><a href="{% url 'cart:cartpage' %}"">Reserve</a></button>
+
+            </div>
+
+
+
+    </div>
+        {%endfor%}
+
+  </div>
+</div>
+
+
+{% endblock %}

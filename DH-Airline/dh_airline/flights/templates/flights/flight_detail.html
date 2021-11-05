@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Test</h1>
+<h1>Test</h1>
+<h1>Test</h1>
+<h1>Flight: {{flight_details.origin}} to {{flight_details.destination}}</h1>
+<h2>Available Seats: {{flight_details.seats}}</h2>
+
+<form>
+        <div>
+                <label for="tickets" style="font-size:18px;">Tickets:</label>
+            <input name="tickets" placeholder="Tickets">
+        </div>
+        {{form.as_p}}
+        <input type="Submit"  class="reservebutton" name="button" value="Reserve"></button>
+
+</form>
+
+
+
+{% endblock %}
